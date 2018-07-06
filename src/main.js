@@ -7,7 +7,7 @@ import store from './store/' //状态管理参数
 
 Vue.config.productionTip = false
 //本地模拟数据-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-// import '../mock/global'
+import '../mock/global'
 //ajax请求通用---------------------------------------------------------------------------------------------
 import ajax_axios from "./util/ajax_axios"
 Vue.prototype.$ajax_axios = ajax_axios //设置ajax请求全局变量
