@@ -84,9 +84,9 @@ new PrerenderSPAPlugin({
     routes: ['/','/page1'],
 })
 ```
-### 生存的page1.html和index.html内容相同
-### 在路由为page2的时候，刷新，则页面报错，不显示
-### 讲路由的mode更改成--history，则生成的html相对应；单身没有进行编译的page2在浏览器查看源代码时，为空
+### 1、生存的page1.html和index.html内容相同
+### 2、在路由为page2的时候，刷新，则页面报错，不显示
+### 3、讲路由的mode更改成--history，则生成的html相对应；但是没有进行编译的page2在浏览器查看源代码时，为空
 ### router.js  
 ```js
 const router = new VueRouter({
@@ -147,3 +147,8 @@ new Vue({
 # 5、增加 store,同时在actions里面通过ajax获取数据  
 1、通过mock,可以获取到内容，源代码里面    有mock返回的数据  
 2、取消mock,则在page1页面会有请求发出，404  
+
+
+# 6、增加 server文件夹，使用koa构建服务    
+1、  
+2、  
