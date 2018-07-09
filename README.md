@@ -150,5 +150,28 @@ new Vue({
 
 
 # 6、增加 server文件夹，使用koa构建服务    
-1、  
-2、  
+1、 一切正常 
+2、 使用了 easy-mock模拟了数据接口 
+
+# 7、判断是否登录--导致打包失败 
+### main.js  
+```js
+//路由拦截，未登录返回登录页---------------------------------------------------------------------------------------------
+router.beforeEach(({ meta, path }, from, next) => {
+    var { auth = true } = meta
+    var isLogin = Boolean(store.state.sessionid) //true用户已登录， false用户未登录
+        // console.log(auth);
+        // console.log(store.state.sessionid);
+        // console.log(isLogin);
+    if (path == '/login') {
+        store.commit('login_ify');
+    } else {
+        store.commit('login_ifn');
+    }
+    if (auth && !isLogin && path !== '/login') {
+        store.commit('login_ify');
+        return next({ path: '/login' })
+    }
+    next()
+});
+```
